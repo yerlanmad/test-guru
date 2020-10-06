@@ -1,11 +1,26 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## TestGuru entities
+- Person
+  - Administrator
+    - `#create_test`
+    - `#edit_test`
+    - `#destroy_test`
+  - User
+    - `#take_test`
+    - `#is_passed?`
+    - `#publish_result`
+- Test
+  - `#show`
+  - `#create`
+  - `#edit`
+  - `#destroy`
+- Interface
 
-Things you may want to cover:
 
+## Info
 * Ruby version
+  2.7.0
 
 * System dependencies
 
