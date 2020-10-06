@@ -1,21 +1,11 @@
 # README
 
 ## TestGuru entities
-- Person
-  - Administrator
-    - `#create_test`
-    - `#edit_test`
-    - `#destroy_test`
-  - User
-    - `#take_test`
-    - `#is_passed?`
-    - `#publish_result`
-- Test
-  - `#show`
-  - `#create`
-  - `#edit`
-  - `#destroy`
-- Interface
+- Users
+- Tests
+- Questions
+- Answers
+- Results
 
 
 ## Info
