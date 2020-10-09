@@ -1,11 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## TestGuru entities
+- Users
+- Tests
+- Questions
+- Answers
+- Results
 
-Things you may want to cover:
 
+## Info
 * Ruby version
+  2.7.0
 
 * System dependencies
 
