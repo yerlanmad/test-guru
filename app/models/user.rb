@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   def accepted_tests(level)
-    user_tests = TestHistory.where(user_id: self.id)
-    Test.where(id: user_tests).where(level: level)
+    TestHistory.joins(:test, :user).where("users.id = :id and level = :level", id: self.id, level: level).pluck("tests.title")
   end
 end
