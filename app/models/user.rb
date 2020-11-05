@@ -5,8 +5,6 @@ class User < ApplicationRecord
     dependent: :destroy
   
   def passed_tests_by_level(level)
-    Test.joins(:test_histories)
-      .where(level: level, test_histories: { user_id: self.id })
-      .distinct
+    tests.where(level: level)
   end
 end
