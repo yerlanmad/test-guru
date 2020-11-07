@@ -8,9 +8,9 @@
 
 unless Category.exists? && Test.exists?
   categories = Category.create!([
-    { category: 'Web' },
-    { category: 'DevOps' },
-    { category: 'AI' }
+    { title: 'Web' },
+    { title: 'DevOps' },
+    { title: 'AI' }
   ])
 
   tests = Test.create!([

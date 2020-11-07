@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_02_193526) do
+ActiveRecord::Schema.define(version: 2020_11_07_033144) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_193526) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "category", null: false
+    t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_193526) do
   create_table "tests", force: :cascade do |t|
     t.string "title", null: false
     t.integer "level", default: 0
-    t.integer "category_id", null: false
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "author_id"
