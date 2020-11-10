@@ -8,9 +8,9 @@
 
 unless Category.exists? && Test.exists?
   categories = Category.create!([
-    { category: 'Web' },
-    { category: 'DevOps' },
-    { category: 'AI' }
+    { title: 'Web' },
+    { title: 'DevOps' },
+    { title: 'AI' }
   ])
 
   tests = Test.create!([
@@ -21,11 +21,11 @@ unless Category.exists? && Test.exists?
 
   questions = []
   tests.each.with_index(1) do |test, i|
-    10.times { |n| questions << Question.create!(body: "Question_body_#{i}-#{n}", test_id: test.id) }
+    10.times { |n| questions << test.questions.create!(body: "Question_body_#{i}-#{n}") }
   end
 
   questions.each.with_index(1) do |question, i|
-    4.times { |n| Answer.create!(body:"Answer_#{i}-#{n}", question_id: question.id, correct: (n == 1)) }
+    4.times { |n| question.answers.create!(body:"Answer_#{i}-#{n}", correct: (n == 1)) }
   end
 
   users = User.create!([
