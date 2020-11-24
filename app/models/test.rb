@@ -5,6 +5,10 @@ class Test < ApplicationRecord
   has_many :test_histories, dependent: :destroy
   has_many :users, through: :test_histories
 
+  validates :title, presence: true, 
+    uniqueness: { scope: :level, message: "should be one level for title" }
+  validates :level, numericality: { greater_than_or_equal_to: 0}
+
   scope :by_complexity, -> (complexity) {
     case complexity
     when :easy
