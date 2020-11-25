@@ -2,7 +2,7 @@ class Answer < ApplicationRecord
   belongs_to :question
 
   validates :body, presence: true
-  validate :validate_belong_count
+  validate :validate_belong_count, on: :create
 
   scope :right_answers, -> { where(correct: true) }
 

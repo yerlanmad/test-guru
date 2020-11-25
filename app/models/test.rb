@@ -9,18 +9,9 @@ class Test < ApplicationRecord
     uniqueness: { scope: :level, message: "should be one level for title" }
   validates :level, numericality: { greater_than_or_equal_to: 0}
 
-  scope :by_complexity, -> (complexity) {
-    case complexity
-    when :easy
-      where(level: 0..1)
-    when :medium
-      where(level: 2..4)
-    when :hard
-      where(level: 5..Float::INFINITY)
-    else
-      none
-    end
-  }
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
 
   scope :by_level, -> (level) { where(level: level) }
   
