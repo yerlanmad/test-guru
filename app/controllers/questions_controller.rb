@@ -8,8 +8,8 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    question = Question.find(params[:id])
-    render plain: question.inspect
+    @question = Question.find(params[:id])
+    render plain: @question.inspect
   end
 
   def new
@@ -17,15 +17,15 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.create!(question_params)
-    render plain: question.inspect
+    @question = Question.create!(question_params)
+    render plain: @question.inspect
   end
 
   def destroy
-    question = Question.find(params[:id])
-    question.destroy
+    @question = Question.find(params[:id])
+    @question.destroy
 
-    render inline: "<p>Question with id: <%= question.id %> was deleted"
+    render inline: "<p>Question was deleted</p>"
   end
 
   private
@@ -38,8 +38,7 @@ class QuestionsController < ApplicationController
     params.require(:question).permit(:body, :test_id)
   end
 
-  def rescue_with_record_not_found
-    render plain: "Question was not found" if params[:id]
-    render plain: "Test was not found" if params[:test_id]
+  def rescue_with_record_not_found(exception)
+    render plain: exception.message
   end
 end
