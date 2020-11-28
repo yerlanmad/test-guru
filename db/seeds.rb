@@ -16,7 +16,10 @@ unless Category.exists? && Test.exists?
   tests = Test.create!([
     { title: "Test_1", level: 0, category_id: categories[0].id },
     { title: "Test_2", level: 1, category_id: categories[1].id },
-    { title: "Test_3", level: 2, category_id: categories[2].id }
+    { title: "Test_3", level: 2, category_id: categories[2].id },
+    { title: "Test_4", level: 3, category_id: categories[0].id },
+    { title: "Test_5", level: 4, category_id: categories[1].id },
+    { title: "Test_6", level: 5, category_id: categories[2].id }
   ])
 
   questions = []
@@ -29,9 +32,9 @@ unless Category.exists? && Test.exists?
   end
 
   users = User.create!([
-    { first_name: "John", last_name: "Doe" },
-    { first_name: "John", last_name: "Galt" },
-    { first_name: "Jonathan", last_name: "Livingston" }
+    { first_name: "John", last_name: "Doe", email: "jd@example.com" },
+    { first_name: "John", last_name: "Galt", email: "jg@example.com" },
+    { first_name: "Jonathan", last_name: "Livingston", email: "jl@example.com" }
   ])
 
   10.times { TestHistory.create!(user_id: users.sample.id, test_id: tests.sample.id, passed: [true, false].sample) }
