@@ -1,0 +1,16 @@
+<h1>Edit question <%= @question.id %> for <%=@question.test.title%></h1>
+
+<%= form_with(model: @question,
+              local: true) do |form| %>
+  <%= render 'shared/errors', resourse: @question %>
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', test_path(@question.test) %>
