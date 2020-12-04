@@ -1,4 +1,4 @@
-<h1>Edit question <%= @question.id %> for <%=@question.test.title%></h1>
+<h1><%= question_header @question.test, :edit %></h1>
 
 <%= form_with(model: @question,
               local: true) do |form| %>
