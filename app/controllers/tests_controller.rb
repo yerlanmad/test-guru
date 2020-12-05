@@ -8,6 +8,7 @@ class TestsController < ApplicationController
   end
 
   def show
+    @questions = @test.questions
   end
 
   def new

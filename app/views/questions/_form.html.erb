@@ -1,11 +1,8 @@
-<%= form_with(model: [ @test, @test.questions.build ],
-              local: true) do |form| %>
+<%= form_with(model: resourse, local: true) do |form| %>
   <%= render 'shared/errors', resourse: @question %>
 
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
+  <%= render 'fields', resourse: form %>
+
   <p>
     <%= form.submit %>
   </p>
