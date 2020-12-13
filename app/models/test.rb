@@ -2,8 +2,8 @@ class Test < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :author, class_name: "User", optional: true
   has_many :questions, dependent: :destroy
-  has_many :test_histories, dependent: :destroy
-  has_many :users, through: :test_histories
+  has_many :test_passages
+  has_many :users, through: :test_passages
 
   validates :title, presence: true, 
     uniqueness: { scope: :level, message: "should be one level for title" }

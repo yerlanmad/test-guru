@@ -36,6 +36,4 @@ unless Category.exists? && Test.exists?
     { first_name: "John", last_name: "Galt", email: "jg@example.com" },
     { first_name: "Jonathan", last_name: "Livingston", email: "jl@example.com" }
   ])
-
-  10.times { TestHistory.create!(user_id: users.sample.id, test_id: tests.sample.id, passed: [true, false].sample) }
 end

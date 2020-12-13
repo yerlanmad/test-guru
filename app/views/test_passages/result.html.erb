@@ -1,0 +1,9 @@
+<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+
+<p style="<%= @style %>">
+  Number of correct answered questions <%= @correct_questions %><br>
+  Your rate is <%= @rate %>%<br>
+  <%= @message %>
+</p>
+
+<%= link_to 'Main', tests_path %>
