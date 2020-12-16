@@ -2,8 +2,8 @@
 
 <p>
   Number of correct answered questions <%= @test_passage.correct_questions %><br>
-  Your rate is <span id="<%= result(@test_passage)[:style] %>"><%= @rate %>%</span><br>
-  <%= result(@test_passage)[:message] %>
+  Your rate is <span id="<%= result(@test_passage.is_passed?)[:style] %>"><%= @rate %>%</span><br>
+  <%= result(@test_passage.is_passed?)[:message] %>
 </p>
 
 <%= link_to 'Main', tests_path %>
