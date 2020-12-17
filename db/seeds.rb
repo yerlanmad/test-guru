@@ -30,10 +30,4 @@ unless Category.exists? && Test.exists?
   questions.each.with_index(1) do |question, i|
     4.times { |n| question.answers.create!(body:"Answer_#{i}-#{n}", correct: (n == 1)) }
   end
-
-  users = User.create!([
-    { first_name: "John", last_name: "Doe", email: "jd@example.com" },
-    { first_name: "John", last_name: "Galt", email: "jg@example.com" },
-    { first_name: "Jonathan", last_name: "Livingston", email: "jl@example.com" }
-  ])
 end
