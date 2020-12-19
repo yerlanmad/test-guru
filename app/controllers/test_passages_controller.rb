@@ -7,6 +7,8 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    redirect_to root_path unless @test_passage.user_id == session[:user_id]
+  
     @rate = @test_passage.rate
   end
   

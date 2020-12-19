@@ -55,7 +55,7 @@ class TestsController < ApplicationController
   end
 
   def find_user
-    @user = User.first
+    @user = User.find(session[:user_id])
   end
 
   def test_params
