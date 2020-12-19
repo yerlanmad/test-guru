@@ -1,14 +1,14 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :flash_alert
 
   private
 
   def authenticate_user!
     unless current_user
-      redirect_to login_path, alert: 'Are you a Guru? Verify your Email and Password please'
+      redirect_to login_path, alert: flash_alert
     end
 
-    cookies[:email] = current_user&.email
+    # cookies[:email] = current_user&.email
   end
 
   def current_user
@@ -17,5 +17,9 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     current_user.present?
+  end
+
+  def flash_alert
+    'Are you a Guru? Verify your Email and Password please.'.freeze
   end
 end

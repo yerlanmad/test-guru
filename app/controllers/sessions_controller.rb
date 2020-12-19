@@ -9,8 +9,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to tests_path
     else
-      flash.now[:alert] = 'Are you a Guru? Verify your Email and Password please'
+      flash.now[:alert] = flash_alert
       render :new
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    render :new
   end
 end
