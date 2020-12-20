@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  EMAIL_FORMAT = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i.freeze
-
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: "Test", foreign_key: "author_id",
@@ -8,7 +6,8 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, presence: true
   validates :email, presence: true, uniqueness: true
-  validate :validate_email_value
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, 
+    message: 'is not valid' }
 
   has_secure_password
 
@@ -18,9 +17,5 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
-  end
-
-  def validate_email_value
-    errors.add(:email, "is not valid") unless email =~ EMAIL_FORMAT
   end
 end

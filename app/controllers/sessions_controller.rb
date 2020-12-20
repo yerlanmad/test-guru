@@ -7,17 +7,16 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to cookies[:path] || root_path
+      redirect_to cookies[:requested_path] || root_path
+      cookies.delete :requested_path
     else
-      flash.now[:alert] = flash_alert
+      flash.now[:alert] = helpers.flash_message(:alert)
       render :new
     end
   end
 
   def destroy
-    session[:user_id] = nil
-    cookies.delete :email
-    cookies.delete :path
+    session.delete(:user_id)
     render :new
   end
 end
