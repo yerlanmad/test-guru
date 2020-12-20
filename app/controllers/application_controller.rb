@@ -6,9 +6,10 @@ class ApplicationController < ActionController::Base
   def authenticate_user!
     unless current_user
       redirect_to login_path, alert: flash_alert
+      cookies[:path] = request&.path
     end
 
-    # cookies[:email] = current_user&.email
+    cookies[:email] = current_user&.email
   end
 
   def current_user
