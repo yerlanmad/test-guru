@@ -1,6 +1,4 @@
 module ApplicationHelper
-  FLASH_MESSAGE = { alert: 'Are you a Guru? Verify your Email and Password please.' }.freeze
-
   def current_year
     Time.current.year
   end
@@ -10,6 +8,8 @@ module ApplicationHelper
   end
 
   def flash_message(type)
-    FLASH_MESSAGE[type]
+    if flash[type]
+      content_tag :p, flash[type], class: "flash #{type}"
+    end
   end
 end
