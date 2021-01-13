@@ -26,5 +26,4 @@ Rails.application.routes.draw do
   end
 
   get 'admin/tests', to: "admin/tests#index", as: :admin_root
-  get 'tests', to: "test#index", as: :user_root
 end

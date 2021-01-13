@@ -1,7 +1,6 @@
 <%= form_with model: [:admin, @test], local: true do |form| %>
   <%= render 'shared/errors', resourse: @test %>
-  
-  <%= form.hidden_field :author_id, value: current_user.id %>
+
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title, id: :test_title %>
