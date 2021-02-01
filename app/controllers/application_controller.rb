@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
-  before_action :set_locale
+  around_action :switch_locale
 
   def default_url_options
-    { lang: I18n.locale }
+    I18n.locale == I18n.default_locale ? {} : { lang: I18n.locale }
   end
 
   def after_sign_in_path_for(resource)
@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def set_locale
-    I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
+  def switch_locale(&action)
+    locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
+    I18n.with_locale(locale, &action)
   end
 end

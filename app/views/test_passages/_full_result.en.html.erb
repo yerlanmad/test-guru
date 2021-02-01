@@ -1,0 +1,4 @@
+<p>
+  Number of correct answered questions <%= @test_passage.correct_questions %><br>
+  Your rate is <span id="<%= result(@test_passage.is_passed?)[:style] %>"><%= @rate %>%</span>
+</p>

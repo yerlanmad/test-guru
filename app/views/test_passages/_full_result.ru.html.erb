@@ -1,0 +1,4 @@
+<p>
+  Количество правильных ответов: <%= @test_passage.correct_questions %><br>
+  Доля правильных ответов: <span id="<%= result(@test_passage.is_passed?)[:style] %>"><%= @rate %>%</span>
+</p>

@@ -1,7 +1,17 @@
 ru:
-  hello: "Привет мир!"
-
+  links:
+    back: "Назад"
+    edit: "Редактировать"
+    main: "Главная"
+    show: "Показать"
+    delete: "Удалить"
+    confirm: "Вы уверены?"
+    logout: "Выход"
+    signup: "Регистрация"
+    login: "Вход"
   helpers:
+    select:
+      prompt: "Выберите"
     submit:
       test:
         create: "Создать Тест"
@@ -11,7 +21,13 @@ ru:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
-
+      user:
+        password: "Пароль"
+        remember_me: "Запомнить"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        password_confirmation: "Подтверждение пароля"
+        current_password: "Текущий пароль"
   shared:
     errors:
       header:
@@ -19,23 +35,48 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
-        
-
+    header:
+      welcome: "Добро пожаловать, %{user} Гуру"
   tests:
     index:
       header: "Доступные Тесты"
-  
+      title: "Название"
+      level: "Уровень"
+      category_id: "Категория"
+      questions_count: "Кол-во вопросов"
+      actions: "Действия"
+    test:
+      start: "Начать" 
   test_passages:
     result:
       header: "Тест %{title} успешно завершён!"
-  
+      pass: "Тест пройден успешно"
+      fail: "Вы не прошли тест"
+    show:
+      header: "Вы проходите тест: %{title}."
+      question_count: "Вопрос № %{index} из %{total}"
+      submit: "Следующий"  
   admin:
+    base:
+      not_auth: "У вас не достаточно прав для просмотра этой страницы."
+    nav:
+      header: "Панель администратора TestGuru"
+      welcome: "Добро пожаловать, %{user} Гуру"
     tests:
       create:
         success: "Тест успешно создан."
       index:
-        header: "Доступные Тесты"
-
+        header: "Доступные тесты"
+        new_test: "Новый тест"
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+        questions_count: "Кол-во вопросов"
+        actions: "Действия"
+  users:
+    sessions:
+      create: 
+        welcome: "Привет! Рады Вас видеть!"
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
