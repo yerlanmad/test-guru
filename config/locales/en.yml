@@ -35,6 +35,10 @@ en:
         other: "%{count} errors detected"
     header:
       welcome: "Welcome %{user} Guru"
+    footer:
+      created_by: "Created by"
+      project_description: "Beautiful solition for online testing"
+      online_school: "Study project at online school Thinknetica"
   tests:
     index:
       header: "Tricky Tests"
@@ -50,6 +54,8 @@ en:
       header: "The %{title} Test was Completed!"
       pass: "Test was successfully passed"
       fail: "You didn't pass the test"
+      correct_questions: "Number of correct answered questions"
+      rate: "Your rate is"
     show:
       header: "Passing %{title} Test"
       question_count: "Question № %{index} from %{total}"

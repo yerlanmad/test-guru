@@ -37,6 +37,10 @@ ru:
         other: "Обнаружено %{count} ошибки"
     header:
       welcome: "Добро пожаловать, %{user} Гуру"
+    footer:
+      created_by: "Создал"
+      project_description: "Прекрасное решение для онлайн тестирования"
+      online_school: "Учебный проект в онлайн-школе Thinknetica"
   tests:
     index:
       header: "Доступные Тесты"
@@ -52,6 +56,8 @@ ru:
       header: "Тест %{title} успешно завершён!"
       pass: "Тест пройден успешно"
       fail: "Вы не прошли тест"
+      correct_questions: "Количество правильных ответов:"
+      rate: "Доля правильных ответов:"
     show:
       header: "Вы проходите тест: %{title}."
       question_count: "Вопрос № %{index} из %{total}"
