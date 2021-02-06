@@ -218,7 +218,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
-  devise (~> 4.0)
+  devise (~> 4.7, >= 4.7.3)
   jbuilder (~> 2.7)
   letter_opener
   listen (~> 3.2)
