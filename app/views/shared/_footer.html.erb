@@ -1,9 +1,9 @@
-<div>
-  <p>
+<footer class="bg-light mt-3">
+  <div class="p-3 bg-secondary text-light">
     <%= current_year %><br>
-    <%= t('.create') %> <%=link_to '@yerlanmad', github_url('yerlanmad'), target: '_blank' %><br>
-    <%= link_to 'Test Guru', github_url('yerlanmad', 'test-guru'), target: '_blank' %><br>
+    <%= t('.create') %> <%=link_to '@yerlanmad', github_url('yerlanmad'), class: 'text-white', target: '_blank' %><br>
+    <%= link_to 'Test Guru', github_url('yerlanmad', 'test-guru'), class: 'text-white', target: '_blank' %><br>
     <%= t('.project_description') %><br>
-    <%= link_to t('.online_school'), 'http://thinknetica.com/', target: '_blank' %>
-  </p>
-</div>
+    <%= link_to t('.online_school'), 'http://thinknetica.com/', class: 'text-white', target: '_blank' %>
+  </div>
+</footer>
