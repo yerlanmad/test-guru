@@ -9,6 +9,7 @@ en:
     logout: "Log out"
     signup: "Sing up"
     login: "Log in"
+    gist: "Save question to Gist"
   helpers:
     select:
       prompt: "Please select"
@@ -61,6 +62,9 @@ en:
       header: "Passing %{title} Test"
       question_count: "Question № %{index} from %{total}"
       submit: "Next"
+    gist:
+      success: "Gist was successfully created!"
+      failure: "An error occurred while saving gist"
   admin:
     base:
       not_auth: "You are not authorized to view this page."

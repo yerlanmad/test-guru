@@ -9,6 +9,7 @@ ru:
     logout: "Выход"
     signup: "Регистрация"
     login: "Вход"
+    gist: "Сохранить вопрос в Gist"
   helpers:
     select:
       prompt: "Выберите"
@@ -62,7 +63,10 @@ ru:
     show:
       header: "Вы проходите тест: %{title}."
       question_count: "Вопрос № %{index} из %{total}"
-      submit: "Следующий"  
+      submit: "Следующий"
+    gist:
+      success: "Gist успешно создан!"
+      failure: "Во время сохранения gist произошла ошибка"
   admin:
     base:
       not_auth: "У вас не достаточно прав для просмотра этой страницы."
