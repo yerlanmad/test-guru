@@ -1,4 +1,6 @@
 module ApplicationHelper
+  ALERTS = { 'alert' => 'alert-warning', 'notice' => 'alert-info', 'error' => 'alert-danger' }
+
   def current_year
     Time.current.year
   end
@@ -8,8 +10,6 @@ module ApplicationHelper
   end
 
   def flash_message(key, message)
-    type = (key == 'alert') ? 'alert-danger' : 'alert-warning'
-
-    content_tag :div, message, class: "alert #{type}", role: "alert"
+    content_tag :div, message, class: "alert #{ALERTS[key]}", role: "alert"
   end
 end
