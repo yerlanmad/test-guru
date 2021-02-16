@@ -11,7 +11,7 @@ class GistQuestionService
   end
   
   def save_gist(user)
-    gist = @question.gists.new(gist_url: @client.last_response.data.id)
+    gist = @question.gists.new(gist_url: @client.last_response.data.id, user_id: user.id)
     
     if gist.save 
       { notice: I18n.t('gist_question_service.success', url: @client.last_response.data.html_url) }
