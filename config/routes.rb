@@ -24,6 +24,8 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+
+    resources :gists, shallow: true
   end
 
   get 'admin/tests', to: "admin/tests#index", as: :admin_root

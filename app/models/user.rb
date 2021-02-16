@@ -11,10 +11,11 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages
   has_many :created_tests, class_name: "Test", foreign_key: "author_id",
     dependent: :nullify
+  has_many :gists
 
   validates :email, presence: true, uniqueness: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP, 
-    message: 'is not valid' }
+    message: I18n.t('is_not_valid') }
 
   def passed_tests_by_level(level)
     tests.by_level(level).distinct

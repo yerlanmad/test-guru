@@ -28,11 +28,17 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+# Environment
+gem 'dotenv-rails', groups: [:development, :test]
+
 # AUTH
 gem 'devise', '~> 4.7', '>= 4.7.3'
 
 # NETWORKING
 gem 'faraday'
+
+# GITHUB API
+gem "octokit", "~> 4.0"
 
 # UI
 gem 'jquery-rails'

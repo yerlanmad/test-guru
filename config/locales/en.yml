@@ -63,7 +63,7 @@ en:
       question_count: "Question № %{index} from %{total}"
       submit: "Next"
     gist:
-      success: "Gist was successfully created!"
+      success: "Gist was successfully created! Link: %{url}"
       failure: "An error occurred while saving gist"
   admin:
     base:
@@ -82,6 +82,12 @@ en:
         category_id: "Category"
         questions_count: "Questions count"
         actions: "Actions"
+    gists:
+      index:
+        header: "Questions at gist"
+        question: "Question"
+        gist_url: "Link to gist"
+        user: "User"
   users:
     sessions:
       create: 
@@ -89,3 +95,8 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+  gist_question_service:
+    description: "A question about %{test_title} from TestGuru"
+    success: "Gist was successfully created! Link: %{url}"
+    failure: "An error occurred while saving gist"
+    not_saved: "Didn't save to DB"
