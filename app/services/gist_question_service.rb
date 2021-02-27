@@ -7,17 +7,7 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
-    @client.last_response
-  end
-  
-  def save_gist(user)
-    gist = @question.gists.new(gist_url: @client.last_response.data.id, user_id: user.id)
-    
-    if gist.save 
-      { notice: I18n.t('gist_question_service.success', url: @client.last_response.data.html_url) }
-    else
-      { alert: I18n.t('gist_question_service.not_saved') }
-    end
+    @client.last_response if @client.last_response.data.id
   end
 
   private
@@ -34,8 +24,9 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join("\n")
+    [
+      @question.body,
+      @question.answers.pluck(:body)
+    ].join("\n")
   end
 end

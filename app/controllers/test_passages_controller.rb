@@ -23,20 +23,6 @@ class TestPassagesController < ApplicationController
     end
   end
 
-  def gist
-    @question = @test_passage.current_question
-    @gist = GistQuestionService.new(@question)
-    result = @gist.call
-
-    flash_options = if (200..299).include?(result.status)
-      @gist.save_gist(current_user)
-    else
-      { alert: t('.failure') }
-    end
-
-    redirect_to @test_passage, flash_options
-  end
-
   private
   
   def find_test_passage

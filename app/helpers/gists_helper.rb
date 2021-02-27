@@ -1,9 +1,9 @@
 module GistsHelper
-  def question_link(question)
-    link_to question.body[0..24], admin_question_path(question)
+  def short_link_to(question)
+    link_to truncate(question.body, length: 25), admin_question_path(question)
   end
 
-  def gist_external_link(gist_id)
-    link_to gist_id, "#{ENV['GIST_URL']}/#{gist_id}", target: '_blank'
+  def external_link_to(gist_id)
+    link_to gist_id, "#{ENV['GIST_URL']}#{gist_id}", target: '_blank'
   end
 end
