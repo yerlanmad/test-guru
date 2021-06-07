@@ -9,15 +9,22 @@ document.addEventListener('turbolinks:load', function() {
 
 })
 
-
 function confirmation_check() {
   var password = document.querySelector('#user_password').value
   var password_confirmation = document.querySelector('#user_password_confirmation').value
 
+  if (password_confirmation) {
+    document.querySelector('.octicon-check-circle').classList.remove('hide')
+    compare_passwords(password, password_confirmation)
+  } else {
+    document.querySelector('.octicon-check-circle').classList.add('hide')
+  }
+}
 
-  if (password && password == password_confirmation) {
+function compare_passwords(password, password_confirmation) {
+  if (password == password_confirmation) {
     document.querySelector('.octicon-check-circle').classList.replace('text-danger', 'text-success')
   } else {
     document.querySelector('.octicon-check-circle').classList.replace('text-success', 'text-danger')
-  }
+  }   
 }
