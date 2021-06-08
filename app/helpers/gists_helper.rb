@@ -4,6 +4,6 @@ module GistsHelper
   end
 
   def external_link_to(gist_id)
-    link_to gist_id, "#{ENV['GIST_URL']}#{gist_id}", target: '_blank'
+    link_to gist_id, "#{ENV.fetch('GIST_URL')}#{gist_id}", target: '_blank'
   end
 end
