@@ -1,30 +1,4 @@
-document.addEventListener('turbolinks:load', function() {
-  var control = document.querySelector('#user_password')
-  var control2 = document.querySelector('#user_password_confirmation')
-  
-  if (control && control2) {
-    control.addEventListener('keyup', confirmation_check)
-    control2.addEventListener('keyup', confirmation_check)
-  }
-
+document.addEventListener('turbolinks:load', () => {
+  const reg_form = document.getElementById('new_user')
+  if(reg_form) new PasswordConfirmation(reg_form)
 })
-
-function confirmation_check() {
-  var password = document.querySelector('#user_password').value
-  var password_confirmation = document.querySelector('#user_password_confirmation').value
-
-  if (password_confirmation) {
-    document.querySelector('.octicon-check-circle').classList.remove('hide')
-    compare_passwords(password, password_confirmation)
-  } else {
-    document.querySelector('.octicon-check-circle').classList.add('hide')
-  }
-}
-
-function compare_passwords(password, password_confirmation) {
-  if (password == password_confirmation) {
-    document.querySelector('.octicon-check-circle').classList.replace('text-danger', 'text-success')
-  } else {
-    document.querySelector('.octicon-check-circle').classList.replace('text-success', 'text-danger')
-  }   
-}
