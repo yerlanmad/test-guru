@@ -7,11 +7,11 @@ document.addEventListener('turbolinks:load', () => {
     }
   }
 
-  let errors = document.querySelector('.resourse-errors')
+  let errors = document.querySelector('.resource-errors')
 
   if (errors) {
-    let resourseId = errors.dataset.resourseId
-    formInlineHandler(resourseId)
+    let resourceId = errors.dataset.resourceId
+    formInlineHandler(resourceId)
   }
 })
 
