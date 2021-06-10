@@ -84,6 +84,8 @@ ru:
         category_id: "Категория"
         questions_count: "Кол-во вопросов"
         actions: "Действия"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         header: "Вопросы в gist"

@@ -82,6 +82,8 @@ en:
         category_id: "Category"
         questions_count: "Questions count"
         actions: "Actions"
+      form_inline:
+        submit: "OK"
     gists:
       index:
         header: "Questions at gist"

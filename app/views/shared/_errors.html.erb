@@ -1,4 +1,5 @@
-<% if resourse.errors.present? %>
+<% if resourse.present? && resourse.errors.present? %>
+  <%= content_tag :div, class: 'resourse-errors', data: { resourse_id: resourse.id } do %>
   <div id="error_explanation" class="alert alert-danger" role="alert">
     <h2>
       <%= t('.header', count: resourse.errors.count) %>:
@@ -9,4 +10,5 @@
       <% end %>
     </ul>
   </div>
+  <% end %>
 <% end %>
