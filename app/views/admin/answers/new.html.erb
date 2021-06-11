@@ -4,5 +4,5 @@
   <%= @question.body %>
 </p>
 
-<%= render 'form', resourse: [:admin, @question, @answer]%>
+<%= render 'form', resource: [:admin, @question, @answer]%>
 <%= link_to t('links.back'), admin_question_path(@question) %>
