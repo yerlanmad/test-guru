@@ -42,6 +42,3 @@ yarn-debug.log*
 
 # Ignore ENV
 .env
-
-# Ignore database.yml
-/config/database.yml
