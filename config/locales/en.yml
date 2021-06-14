@@ -10,6 +10,7 @@ en:
     signup: "Sing up"
     login: "Log in"
     gist: "Save question to Gist"
+    feedback: "Feedback"
   helpers:
     select:
       prompt: "Please select"
@@ -102,3 +103,11 @@ en:
     success: "Gist was successfully created! Link: %{url}"
     failure: "An error occurred while saving gist"
     not_saved: "Didn't save to DB"
+  feedbacks:
+    new:
+      header: "Feedback"
+      title: "Title"
+      text: "Content"
+      submit: "Send"      
+    create:
+      feedback_sent: "Feedback was sent"

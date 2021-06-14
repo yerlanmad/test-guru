@@ -10,6 +10,7 @@ ru:
     signup: "Регистрация"
     login: "Вход"
     gist: "Сохранить вопрос в Gist"
+    feedback: "Обратная связь"
   helpers:
     select:
       prompt: "Выберите"
@@ -104,3 +105,11 @@ ru:
     success: "Gist успешно создан! Ссылка: %{url}"
     failure: "Во время сохранения gist произошла ошибка"
     not_saved: "Не сохранен в БД"
+  feedbacks:
+    new:
+      header: "Обратная связь"
+      title: "Заголовок"
+      text: "Содержание"
+      submit: "Отправить"
+    create:
+      feedback_sent: "Отзыв отправлен"

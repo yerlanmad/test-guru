@@ -34,4 +34,6 @@ Rails.application.routes.draw do
 
   get 'admin/tests', to: "admin/tests#index", as: :admin_root
   get 'tests', to: "tests#index", as: :user_root
+
+  resources :feedbacks, only: %i[new create]
 end

@@ -1,0 +1,17 @@
+<h1><%= t('.header') %></h1>
+
+<%= form_with scope: :feedback, url: feedbacks_path, local: true do |form| %>
+  <p>
+    <%= form.label t('.title') %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label t('.text') %><br>
+    <%= form.text_area :text %>
+  </p>
+
+  <p>
+    <%= form.submit t('.submit')%>
+  </p>
+<% end %>
