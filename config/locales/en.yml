@@ -11,6 +11,9 @@ en:
     login: "Log in"
     gist: "Save question to Gist"
     feedback: "Feedback"
+    new_test: "New test"
+    new_question: "New question"
+    new_answer: "New answer"
   helpers:
     select:
       prompt: "Please select"
@@ -18,11 +21,22 @@ en:
       test:
         create: "Create Test"
         update: "Update Test"
+      question:
+        create: "Create Question"
+        update: "Update Question"
+      answer:
+        create: "Create Answer"
+        update: "Update Answer"
     label:
       test:
         title: "Title"
         level: "Level"
         category_id: "Category"
+      question:
+        body: "Question"
+      answer:
+        body: "Answer"
+        correct: "Correct"
       user:
         password: "Password"
         remember_me: "Remember me"
@@ -30,6 +44,9 @@ en:
         last_name: "Last name"
         password_confirmation: "Password confirmation"
         current_password: "Current password"
+      feedback:
+        title: "Title"
+        text: "Content"
   shared:
     errors:
       header:
@@ -77,14 +94,42 @@ en:
         success: "Test was successfully created."
       index:
         header: "Tricky tests"
-        new_test: "New test"
         title: "Title"
         level: "Level"
         category_id: "Category"
         questions_count: "Questions count"
         actions: "Actions"
+      show:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+        id: "Id"
+        body: "Question"
+        header: Questions for %{title} test
+        actions: "Actions"
+      new:
+        header: "Create Test"
+      edit:
+        header: "Edit %{title} Test"
       form_inline:
         submit: "OK"
+    questions:
+      show:
+        header: "Question from %{title} test"
+        answers: "Answers"
+      new:
+        header: "Create Question for %{title}"
+      edit:
+        header: "Edit Question for %{title}"
+    answers:
+      show:
+        header: "Question"
+        answer: "Answer"
+        correct: "Correct"
+      new:
+        header: "Create Answer"
+      edit:
+        header: "Edit Answer"
     gists:
       index:
         header: "Questions at gist"
@@ -106,8 +151,6 @@ en:
   feedbacks:
     new:
       header: "Feedback"
-      title: "Title"
-      text: "Content"
       submit: "Send"      
     create:
       feedback_sent: "Feedback was sent"

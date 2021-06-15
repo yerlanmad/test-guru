@@ -2,12 +2,12 @@
 
 <%= form_with scope: :feedback, url: feedbacks_path, local: true do |form| %>
   <p>
-    <%= form.label t('.title') %><br>
+    <%= form.label :title %><br>
     <%= form.text_field :title %>
   </p>
 
   <p>
-    <%= form.label t('.text') %><br>
+    <%= form.label :text %><br>
     <%= form.text_area :text %>
   </p>
 

@@ -1,4 +1,4 @@
-<h1><%= question_header @test, :create %></h1>
+<h1><%= t('.header', title: @test.title) %></h1>
 
 <%= render 'form', resource: [:admin, @test, @question] %>
 <%= link_to t('links.back'), admin_test_path(@test) %>

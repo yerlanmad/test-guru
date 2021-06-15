@@ -11,6 +11,9 @@ ru:
     login: "Вход"
     gist: "Сохранить вопрос в Gist"
     feedback: "Обратная связь"
+    new_test: "Новый тест"
+    new_question: "Новый вопрос"
+    new_answer: "Новый ответ"
   helpers:
     select:
       prompt: "Выберите"
@@ -18,11 +21,22 @@ ru:
       test:
         create: "Создать Тест"
         update: "Обновить Тест"
+      question:
+        create: "Создать Вопрос"
+        update: "Обновить Вопрос"
+      answer:
+        create: "Создать Ответ"
+        update: "Обновить Ответ"
     label:
       test:
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
+      question:
+        body: "Вопрос"
+      answer:
+        body: "Ответ"
+        correct: "Правильный"
       user:
         password: "Пароль"
         remember_me: "Запомнить"
@@ -30,6 +44,9 @@ ru:
         last_name: "Фамилия"
         password_confirmation: "Подтверждение пароля"
         current_password: "Текущий пароль"
+      feedback:
+        title: "Заголовок"
+        text: "Содержание"
   shared:
     errors:
       header:
@@ -79,14 +96,42 @@ ru:
         success: "Тест успешно создан."
       index:
         header: "Доступные тесты"
-        new_test: "Новый тест"
         title: "Название"
         level: "Уровень"
         category_id: "Категория"
         questions_count: "Кол-во вопросов"
         actions: "Действия"
+      show:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+        id: "Ид."
+        body: "Вопрос"
+        header: Вопросы для теста %{title}
+        actions: "Действия"
+      new:
+        header: "Создать Тест"
+      edit:
+        header: "Редактировать Тест %{title}"
       form_inline:
         submit: "OK"
+    questions:
+      show:
+        header: "Вопрос из теста %{title}"
+        answers: "Ответы"
+      new:
+        header: "Создать Вопрос для %{title}"
+      edit:
+        header: "Редактировать Вопрос для %{title}"
+    answers:
+      show:
+        header: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильный"
+      new:
+        header: "Создать Ответ"
+      edit:
+        header: "Редактировать Ответ"
     gists:
       index:
         header: "Вопросы в gist"
@@ -108,8 +153,6 @@ ru:
   feedbacks:
     new:
       header: "Обратная связь"
-      title: "Заголовок"
-      text: "Содержание"
       submit: "Отправить"
     create:
       feedback_sent: "Отзыв отправлен"
