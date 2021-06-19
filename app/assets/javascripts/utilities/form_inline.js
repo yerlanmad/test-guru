@@ -30,10 +30,10 @@ function formInlineHandler(testId) {
   if (formInline.classList.contains('hide')) {
     testTitle.classList.add('hide')
     formInline.classList.remove('hide')
-    link.textContent = 'Cancel'
+    link.textContent = 'Отмена'
   } else {
     testTitle.classList.remove('hide')
     formInline.classList.add('hide')
-    link.textContent = 'Edit'
+    link.textContent = 'Редактировать'
   }
 }

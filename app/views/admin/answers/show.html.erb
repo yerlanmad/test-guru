@@ -1,16 +1,16 @@
-<h1>Question</h1>
+<h1><%= t('.header') %></h1>
 
 <p>
   <%= @answer.question.body %>
 </p>
 
 <p>
-  <b>Answer:</b>
+  <b><%= t('.answer') %>:</b>
   <%= @answer.body %>
 </p>
 
 <p>
-  <b>Correct:</b>
+  <b><%= t('.correct') %>:</b>
   <%= @answer.correct %>
 </p>
 
