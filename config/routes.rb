@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     end
 
     resources :gists, shallow: true, only: :index
+    resources :badges, shallow: true
   end
 
   get 'admin/tests', to: "admin/tests#index", as: :admin_root

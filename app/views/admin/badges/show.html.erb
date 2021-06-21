@@ -1,0 +1,37 @@
+<p>
+  <strong><%= t('.name') %>:</strong>
+  <%= @badge.name %>
+</p>
+
+<p>
+  <strong><%= t('.icon') %>:</strong>
+  <img src="<%= @badge.icon %>">
+</p>
+
+<p>
+  <strong><%= t('.level') %>:</strong>
+  <%= @badge.level %>
+</p>
+
+<p>
+  <strong><%= t('.category_id') %>:</strong>
+  <%= @badge.category.title %>
+</p>
+
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" <%= @badge.first_attempt ? "checked" : "" %> disabled>
+  <label class="form-check-label" style="opacity:1.0"><%= t('.first_attempt') %></label>
+</div>
+
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" <%= @badge.all_in_category ? "checked" : "" %> disabled>
+  <label class="form-check-label" style="opacity:1.0"><%= t('.all_in_category') %></label>
+</div>
+
+<div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" <%= @badge.all_in_level ? "checked" : "" %> disabled>
+  <label class="form-check-label" style="opacity:1.0"><%= t('.all_in_level') %></label>
+</div>
+
+<%= link_to t('links.edit'), edit_admin_badge_path(@badge) %> |
+<%= link_to t('links.back'), admin_badges_path %>
