@@ -14,6 +14,7 @@ ru:
     new_test: "Новый тест"
     new_question: "Новый вопрос"
     new_answer: "Новый ответ"
+    new_badge: "Новый бейдж"
   helpers:
     select:
       prompt: "Выберите"
@@ -27,6 +28,9 @@ ru:
       answer:
         create: "Создать Ответ"
         update: "Обновить Ответ"
+      badge:
+        create: "Создать Бейдж"
+        update: "Обновить Бейдж"
     label:
       test:
         title: "Название"
@@ -47,6 +51,14 @@ ru:
       feedback:
         title: "Заголовок"
         text: "Содержание"
+      badge:
+        name: "Название"
+        icon: "Иконка"
+        level: "Уровень"
+        category_id: "Категория"
+        first_attempt: "С первой попытки"
+        all_in_category: "Все в категории"
+        all_in_level: "Все по уровню"
   shared:
     errors:
       header:
@@ -138,6 +150,35 @@ ru:
         question: "Вопрос"
         gist_url: "Ссылка на gist"
         user: "Пользователь"
+    badges:
+      create:
+        success: "Бейдж успешно создан"
+      update:
+        success: "Бейдж успешно обновлен"
+      destroy:
+        success: "Бейдж успешно удален"
+      index:
+        header: "Бейджи за прохождение тестов"
+        name: "Название"
+        icon: "Иконка"
+        level: "Уровень"
+        category_id: "Категория"
+        first_attempt: "С первой попытки"
+        all_in_category: "Все в категории"
+        all_in_level: "Все по уровню"
+        actions: "Действия"
+      edit:
+        header: "Редактировать бейдж %{title}"
+      show:
+        name: "Название"
+        icon: "Иконка"
+        level: "Уровень"
+        category_id: "Категория"
+        first_attempt: "С первой попытки"
+        all_in_category: "Все в категории"
+        all_in_level: "Все по уровню"
+      new:
+        header: "Новый бейдж"
   users:
     sessions:
       create: 

@@ -18,7 +18,7 @@
 
   <p>
     <%= form.label :category_id %>
-    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, include_blank: true %>
 
   <div class="form-check form-switch">
     <%= form.check_box :first_attempt, id: :first_attempt, class: "form-check-input", type: "checkbox" %>
