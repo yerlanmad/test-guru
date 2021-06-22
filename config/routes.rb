@@ -37,4 +37,5 @@ Rails.application.routes.draw do
   get 'tests', to: "tests#index", as: :user_root
 
   resources :feedbacks, only: %i[new create]
+  resources :badges, only: %i[index show]
 end
