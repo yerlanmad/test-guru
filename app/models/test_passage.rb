@@ -16,7 +16,8 @@ class TestPassage < ApplicationRecord
     if correct_answer?(answer_ids)
       self.correct_questions += 1
     end
-
+    
+    self.passed = true if is_passed?
     save!
   end
 
@@ -32,6 +33,22 @@ class TestPassage < ApplicationRecord
     rate >= PASS_RATE
   end
 
+  def attempts_count
+    TestPassage.where(test_id: test_id, user_id: user_id).count
+  end
+
+  def all_in_category?
+    category_tests = Test.where(category_id: test.category_id).ids
+    passed_tests = user.test_passages.where(passed: true).pluck(:test_id)
+    (category_tests - passed_tests).empty?
+  end
+
+  def all_in_level?
+    level_tests = Test.where(level: test.level).ids
+    passed_tests = user.test_passages.where(passed: true).pluck(:test_id)
+    (level_tests - passed_tests).empty?
+  end
+
   private
 
   def before_validation_set_first_question
@@ -39,7 +56,7 @@ class TestPassage < ApplicationRecord
   end
 
   def before_update_set_next_question
-    self.current_question = next_question
+    self.current_question = next_question unless completed?
   end
 
   def correct_answer?(answer_ids)

@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_21_134820) do
+ActiveRecord::Schema.define(version: 2021_06_27_123419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievements", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "badge_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["badge_id"], name: "index_achievements_on_badge_id"
+    t.index ["user_id"], name: "index_achievements_on_user_id"
+  end
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -70,6 +79,7 @@ ActiveRecord::Schema.define(version: 2021_06_21_134820) do
     t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "passed", default: false
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
@@ -113,6 +123,8 @@ ActiveRecord::Schema.define(version: 2021_06_21_134820) do
     t.index ["type"], name: "index_users_on_type"
   end
 
+  add_foreign_key "achievements", "badges"
+  add_foreign_key "achievements", "users"
   add_foreign_key "answers", "questions"
   add_foreign_key "badges", "categories"
   add_foreign_key "gists", "questions"

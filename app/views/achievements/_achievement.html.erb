@@ -1,0 +1,30 @@
+<div class="col mb-3">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><img src="<%= achievement.badge.icon %>" alt="Card image cap"> <%= achievement.badge.name %></h5>
+      <p class="card-text">  
+        <strong><%= t('.level') %>:</strong>
+        <%= achievement.badge.level %>
+      </p>
+      <p class="card-text">
+        <strong><%= t('.category_id') %>:</strong>
+        <%= achievement.badge.category&.title %>
+      </p>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" <%= achievement.badge.first_attempt ? "checked" : "" %> disabled>
+        <label class="form-check-label" style="opacity:1.0"><%= t('.first_attempt') %></label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" <%= achievement.badge.all_in_category ? "checked" : "" %> disabled>
+        <label class="form-check-label" style="opacity:1.0"><%= t('.all_in_category') %></label>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" <%= achievement.badge.all_in_level ? "checked" : "" %> disabled>
+        <label class="form-check-label" style="opacity:1.0"><%= t('.all_in_level') %></label>
+      </div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><%= I18n.l achievement.updated_at %></small>
+    </div>
+  </div>
+</div>
