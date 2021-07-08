@@ -30,10 +30,13 @@ Rails.application.routes.draw do
     end
 
     resources :gists, shallow: true, only: :index
+    resources :badges, shallow: true
   end
 
   get 'admin/tests', to: "admin/tests#index", as: :admin_root
   get 'tests', to: "tests#index", as: :user_root
 
   resources :feedbacks, only: %i[new create]
+  resources :badges, only: %i[index show]
+  resources :achievements, only: :index
 end

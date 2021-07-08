@@ -1,0 +1,21 @@
+<tr>
+  <td class='align-middle'>
+    <%= content_tag :span, badge.name %>
+  </td>
+  <td class='align-middle'><img src="<%= badge.icon %>"></td>
+  <td class='align-middle'><%= badge.level %></td>
+  <td class='align-middle'><%= badge.category&.title %></td>
+  <td class='align-middle'>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" <%= badge.first_attempt ? "checked" : "" %> disabled></td>
+    </div>
+  <td class='align-middle'>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" <%= badge.all_in_category ? "checked" : "" %> disabled></td>
+    </div>
+  <td class='align-middle'>
+    <div class="form-check form-switch">
+      <input class="form-check-input" type="checkbox" <%= badge.all_in_level ? "checked" : "" %> disabled></td>
+    </div>
+  <td class='align-middle'><%= link_to t('links.show'), badge_path(badge) %></td>
+</tr>

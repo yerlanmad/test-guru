@@ -14,6 +14,7 @@ en:
     new_test: "New test"
     new_question: "New question"
     new_answer: "New answer"
+    new_badge: "New badge"
   helpers:
     select:
       prompt: "Please select"
@@ -27,6 +28,9 @@ en:
       answer:
         create: "Create Answer"
         update: "Update Answer"
+      badge:
+        create: "Create Badge"
+        update: "Update Badge"
     label:
       test:
         title: "Title"
@@ -47,6 +51,14 @@ en:
       feedback:
         title: "Title"
         text: "Content"
+      badge:
+        name: "Name"
+        icon: "Icon"
+        level: "Level"
+        category_id: "Category"
+        first_attempt: "First attempt"
+        all_in_category: "All in category"
+        all_in_level: "All in level"
   shared:
     errors:
       header:
@@ -136,6 +148,35 @@ en:
         question: "Question"
         gist_url: "Link to gist"
         user: "User"
+    badges:
+      create:
+        success: "Badge was successfully created."
+      update:
+        success: "Badge was successfully updated."
+      destroy:
+        success: "Badge was successfully deleted"
+      index:
+        header: "Badges for passed tests"
+        name: "Name"
+        icon: "Icon"
+        level: "Level"
+        category_id: "Category"
+        first_attempt: "First attempt"
+        all_in_category: "All in category"
+        all_in_level: "All in level"
+        actions: "Actions"
+      edit:
+        header: "Edit %{title} badge"
+      show:
+        name: "Name"
+        icon: "Icon"
+        level: "Level"
+        category_id: "Category"
+        first_attempt: "First attempt"
+        all_in_category: "All in category"
+        all_in_level: "All in level"
+      new:
+        header: "New badge"
   users:
     sessions:
       create: 

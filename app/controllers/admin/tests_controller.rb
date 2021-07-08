@@ -5,7 +5,6 @@ class Admin::TestsController < Admin::BaseController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
   def index
-
   end
 
   def show

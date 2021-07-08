@@ -1,0 +1,39 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :badge_name %>
+  </p>
+
+  <p>
+    <%= form.label :icon %>
+    <%= form.text_field :icon, id: :badge_icon %>
+  </p>
+
+  <p>
+    <%= form.label :level %>
+    <%= form.number_field :level, id: :badge_level %>
+  </p>
+
+  <p>
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true, include_blank: true %>
+
+  <div class="form-check form-switch">
+    <%= form.check_box :first_attempt, id: :first_attempt, class: "form-check-input", type: "checkbox" %>
+    <%= form.label :first_attempt %>
+  </div>
+
+  <div class="form-check form-switch">
+    <%= form.check_box :all_in_category, id: :all_in_category, class: "form-check-input", type: "checkbox"  %>
+    <%= form.label :all_in_category %>
+  </div>
+  
+  <div class="form-check form-switch">
+    <%= form.check_box :all_in_level, id: :all_in_level, class: "form-check-input", type: "checkbox"  %>
+    <%= form.label :all_in_level %>
+  </div><br>
+  
+  <%= form.submit %>
+<% end %>

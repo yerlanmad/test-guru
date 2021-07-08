@@ -42,3 +42,6 @@ yarn-debug.log*
 
 # Ignore ENV
 .env
+
+# Ignore rubocop
+.rubocop.yml
