@@ -51,13 +51,14 @@ class Admin::BadgesController < Admin::BaseController
 
   def badge_params
     params.require(:badge).permit(
-      :name, 
-      :icon, 
-      :category_id, 
-      :level, 
+      :name,
+      :icon,
+      :category_id,
+      :level,
       :first_attempt,
       :all_in_category,
-      :all_in_level)
+      :all_in_level
+    )
   end
 
   def rescue_with_record_not_found(exception)
